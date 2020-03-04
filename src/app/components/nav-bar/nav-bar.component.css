@@ -1,0 +1,6 @@
+.navbar-nav:last-child {
+    background:#fff; 
+    box-shadow:0 -1px 2px 0 #dfe3ec;
+    margin:1.5em 0 0 0;
+    padding:1.5em 2.5rem;
+}
