@@ -14,15 +14,107 @@
     </div>
   </div>
 
-  <div class="row" *ngIf="profileJson">
+  <!-- <div class="row" *ngIf="profileJson">
     <pre class="rounded"><code class="json" [highlight]="profileJson"></code></pre>
+  </div> -->
+
+  <div *ngIf="profile.email_verified">
+    <div class="card bg-light">
+      <div class="card-body">
+        <form> 
+
+          <div class="form-group">
+            <label for="InputEmailLabel">Title</label>
+            <input type="text" class="form-control" id="inputAdvertTitle" placeholder="Advert Title">
+            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+          </div>
+
+          <div class="form-group">
+            <label for="FormControlSelect1">Category</label>
+            <select class="form-control" id="inputCategory">
+              <option>Gaming</option>
+              <option>Gardening</option>
+              <option>Power Tools</option>
+              <option>Kitchen</option>
+              <option>Camping</option>
+              <option>Beach</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="InputDescriptionLabel">Description</label>
+            <textarea type="text" class="form-control" id="inputAdvertDescription" placeholder="Describe your advert"></textarea>
+            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+          </div>
+
+          <div class="form-group">
+            <label for="InputOneWordDescriptionLabel">Describe Your Item</label>
+            <input type="text" class="form-control" id="inputAdvertOneWordDescription" placeholder="Describe your item for rent in one word">
+            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+          </div>
+
+          <div class="form-group">
+            <label for="InputEmailLabel">Location</label>
+            <input type="text" class="form-control" id="inputAdvertLocation" placeholder="Where are you?">
+            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+          </div>
+          
+          <div class="form-group">
+            <label for="InputContactlLabel">Contact</label>
+            <input type="text" class="form-control" id="inputAdvertContact" placeholder="Contact">
+            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+          </div>
+
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <label class="input-group-text" id="inputAdvertImage">Upload</label>
+            </div>
+            
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="Image1"
+                aria-describedby="inputGroupFileAddon01">
+              <label class="custom-file-label" for="inputGroupFile01">Choose Image</label>
+            </div>
+          </div>
+          
+<br>
+
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Terms and Conditions</label>
+            </div>
+       
+      
+            <!-- <div class="file-field">
+              <div class="btn btn-primary btn-sm float-left">
+                <span>Choose file</span>
+                <input type="file">
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text" placeholder="Upload your file">
+              </div>
+            </div> -->
+          
+
+         
+          <br>
+          <button type="submit" class="btn btn-primary" id="  ">Submit</button>
+        </form>
+       
+      </div>
+    </div>
   </div>
 
-  <div> 
+  <div *ngIf="!profile.email_verified">
+    <h1>You need to verify your email stupid</h1>
+  </div>
+  <br>
+
+  <!-- <div> 
     <button (click)="PingAPI()">Ping Api</button>
 
     <pre *ngIf="responseJson">
       <code>{{ responseJson | json }}</code>
       </pre>
-  </div>
+  </div> -->
 </div>

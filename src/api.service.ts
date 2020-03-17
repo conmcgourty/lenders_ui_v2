@@ -13,4 +13,8 @@ export class ApiService {
     return this.http.get('http://localhost:3010/api/private');
   }
 
+  captureUser(user: any){
+    this.http.post('http://localhost:3010/api/private',JSON.stringify(user));
+  }
+
 }
