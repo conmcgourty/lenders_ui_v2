@@ -15,6 +15,7 @@ import { HeroComponent } from './components/hero/hero.component';
 import { HomeContentComponent } from './components/home-content/home-content.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 export function hljsLanguages() {
   return [{ name: 'json', func: json }];
@@ -39,7 +40,8 @@ export function hljsLanguages() {
       languages: hljsLanguages
     }),
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
