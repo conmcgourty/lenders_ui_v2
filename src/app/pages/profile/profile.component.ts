@@ -29,9 +29,11 @@ export class ProfileComponent implements OnInit {
 
   onSubmit() {
 
-    // this.api.createAdvert$(this.model).subscribe(
-    //   res => this.model = res
-    // );   
+    //this.api.createAdvert$(this.model);
+
+     this.api.createAdvert$(this.model).subscribe(
+       res => this.model = res
+     );   
 
     console.log(JSON.stringify(this.model));  
   }

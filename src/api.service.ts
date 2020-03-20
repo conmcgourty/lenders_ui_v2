@@ -15,24 +15,17 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   ping$(advert: advert): Observable<any> {
-    return this.http.get('http://localhost:3010/api/private');
+    // return this.http.get('http://localhost:3010/api/private');
+    return this.http.post('http://localhost:3010/api/private', advert);
   }
 
   captureUser(user: any){
     this.http.post(this.baseUrl +'/',JSON.stringify(user));
   }
 
-  createAdvert$(advert: advert)
+  createAdvert$(advert: advert): Observable<any>
   {
-
-    this.http.post('http://localhost:3010/api/private', advert);
-
-    // this.http.post<advert>(this.baseUrl, JSON.stringify(advert)).subscribe(
-    //   (t: advert) => console.info(JSON.stringify(t))
-    //   );
-    
-    //return this.http.get('http://localhost:3010/api/private');
-    // return this.http.post('http://localhost:3010/api/private', advert);
+    return this.http.post('http://localhost:3010/api/advert/create', advert);
   }
 
 }
