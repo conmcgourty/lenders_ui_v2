@@ -19,7 +19,8 @@
   </div> -->
 
   <div *ngIf="profile.email_verified">
-    <div class="card bg-light">
+    <h2>Post Item</h2>
+    <div class="card bg-light col-md-6">
       <div class="card-body">
         <form #form="ngForm" (ngSubmit)="onSubmit(form.value)">  
 
@@ -62,6 +63,12 @@
           <div class="form-group">
             <label for="InputContactlLabel">Contact</label>
             <input type="text" class="form-control" [(ngModel)]="model.Contact" name="Contact" placeholder="Contact">
+            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+          </div>
+
+          <div class="form-group">
+            <label for="InputContactlLabel">Category</label>
+            <input type="text" class="form-control" [(ngModel)]="model.Category" name="Category" placeholder="Category">
             <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
           </div>
 
@@ -110,7 +117,7 @@
   </div>
   <br>
 
-  <button (click)="PingAPI()">Ping Api</button>
+  <!-- <button (click)="PingAPI()">Ping Api</button> -->
 
   <!-- <div> 
     <button (click)="PingAPI()">Ping Api</button>

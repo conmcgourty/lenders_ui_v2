@@ -1,6 +1,6 @@
 export class advert{
     Title:string;
-    //Category:number;
+    Category:string;
     Description:string;
     OneWordDescription:string;
     Location:string;

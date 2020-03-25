@@ -14,7 +14,7 @@ export class ProfileComponent implements OnInit {
   responseJson: string;
   formGroup: FormGroup;
 
-
+  posted:boolean = false;
   model = new advert();
 
   constructor(public auth: AuthService, public api: ApiService) { 
@@ -32,7 +32,10 @@ export class ProfileComponent implements OnInit {
     //this.api.createAdvert$(this.model);
 
      this.api.createAdvert$(this.model).subscribe(
-       res => this.model = res
+      // res => this.model = res
+      x => {
+        if(x.message === "Advert Created"){this.posted = true;}
+      }
      );   
 
     console.log(JSON.stringify(this.model));  
