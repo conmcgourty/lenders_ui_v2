@@ -8,3 +8,13 @@ export class advert{
     //  Image:string;
     Check:string;
 }
+
+export class user{
+    
+    nickname:string;   
+    picture: string;
+    updated_at: string;
+    email:string;
+    email_verified: boolean;
+    sub: string;
+}

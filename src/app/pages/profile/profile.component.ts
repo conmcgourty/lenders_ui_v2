@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/auth/auth.service';
 import { ApiService } from '../../../api.service';
 import { NgForm, FormGroup, FormControl } from '@angular/forms';
-import { advert } from 'src/app/models/advert-model';
+import { advert, user } from 'src/app/models/advert-model';
 
 @Component({
   selector: 'app-profile',
@@ -10,19 +10,25 @@ import { advert } from 'src/app/models/advert-model';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  profileJson: string = null;
+ 
   responseJson: string;
   formGroup: FormGroup;
 
   posted:boolean = false;
   model = new advert();
+  profileJson = new user();
 
   constructor(public auth: AuthService, public api: ApiService) { 
   }
 
   ngOnInit() {
     this.auth.userProfile$.subscribe(
-      profile => this.profileJson = JSON.stringify(profile, null, 2)
+      // profile => this.profileJson = JSON.stringify(profile, null, 2),
+      profile => this.profileJson = profile,
+    );
+
+    this.api.captureUser(this.profileJson).subscribe(
+      x => console.log(x)
     );
 
   }
