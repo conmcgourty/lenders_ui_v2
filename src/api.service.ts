@@ -10,8 +10,8 @@ import { catchError } from 'rxjs/operators';
 })
 export class ApiService {
 
-  //baseUrl = "http://localhost:3010/api";
-  baseUrl = "https://lenders-api.azurewebsites.net/api";
+  baseUrl = "http://localhost:3010/api";
+  //baseUrl = "https://lenders-api.azurewebsites.net/api";
 
   constructor(private http: HttpClient) { }
 
@@ -27,7 +27,7 @@ export class ApiService {
 
   createAdvert$(advert: advert): Observable<any>
   {
-    return this.http.post(this.baseUrl + '/advert/create', advert);
+    return this.http.post(this.baseUrl + '/advert', advert);
   }
 
   // create(user_obj: any): Observable<any>
